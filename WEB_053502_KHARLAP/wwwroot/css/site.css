@@ -1,0 +1,75 @@
+header, footer {
+    background-color: #343a40;
+}
+
+.nav-color {
+    color: rgba(255, 255, 255, 0.5)
+}
+
+/*чек-боксы*/
+.form-check {
+    position: relative;
+    left: 200px;
+    top: 10px;
+}
+/*радио-баттоны*/
+.form-check2 {
+    position: relative;
+    left: 200px;
+    top: 10px;
+}
+/*логин-пароль*/
+.log {
+    position: relative;
+    top: 25px;
+}
+/*поля для их ввода*/
+.logpas {
+    position: relative;
+    left: 150px;
+}
+/*кнопка отправки*/
+.send {
+    position: relative;
+    top: 25px;
+}
+/*цвет кнопки*/
+.but {
+    background-color: royalblue;
+}
+/*прибиваем футер к низу страницы*/
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main1 {
+    padding: 10px;
+    flex: 1 1 auto;
+}
+/*прибили футер*/
+/*ширина футера*/
+.footer {
+    padding: 5px;
+}
+/*двигаем выпадающий список и корзину влево*/
+.menu {
+    position: relative;
+    left: 800px;
+}
+
+.navbar-nav1 {
+    position: absolute;
+    left: 1050px;
+}
+/*конец*/
+
+.header {
+    padding: 10px;
+}

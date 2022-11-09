@@ -1,0 +1,27 @@
+﻿<div class="navbar-nav1">
+    <a asp-controller="Cart" asp-action="Index" class="navbar-text">
+        00,0 руб <i class="fa fa-shopping-cart nav-color"></i> (0)
+    </a>
+</div>
+<div class="menu">
+    <div class="dropdown ml-4 nav-color ">
+        <div class="dropdown-toggle" id="dropdownMenuButton"
+             data-toggle="dropdown" aria-haspopup="true"
+             aria-expanded="false">
+            <img src="images/avatar.jpg" width="30"
+                 alt="User" class="rounded" />
+        </div>
+        <div class="dropdown-menu"
+             aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-item-text">
+                <img src="images/avatar.jpg" width="50"
+                     alt="User" class="rounded" />
+                nik122002@outlook.com
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" asp-controller="Product" aspaction="UserProducts">Мои товары</a>
+            <a class="dropdown-item" asp-area="Identity"
+               asp-page="/Account/Logout">Log off</a>
+        </div>
+    </div>
+</div>

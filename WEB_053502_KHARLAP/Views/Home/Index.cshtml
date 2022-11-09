@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Main Page";
+    
+}
+<h2>@ViewData["Text"]</h2>
+<main class="container">
+<h2>Список</h2>
+<ol type="A">
+    @for (int i = 1; i < 5; i++)
+    {
+        <li>элемент @i списка</li>
+    }
+</ol>
+
+<hr />
+<h2>Форма</h2>
+<form action="#" name="MyForm">
+    <div class="item-size">
+        <select asp-items="@ViewData["Lst"] as SelectList"></select>
+    </div>
+        <div class="form-check">
+            <!--чек-боксы-->
+            <input class="form-check-input" type="checkbox" name="Check1">
+            <label class="form-check-label" for="Check1">
+                Чек-бокс 1
+            </label>
+            <p></p>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="Check2">
+            <label class="form-check-label" for="Check2">
+                Чек-бокс 2
+            </label>
+            <p></p>
+        </div>
+        <div class="form-check2">
+            <!--радио-баттоны-->
+            <input class="form-check-input" type="radio" name="Radio">
+            <label class="form-check-label" for="Radio1">
+                Радио-1
+
+            </label>
+            <input class="form-check-input" type="radio" name="Radio">
+            <label class="form-check-label" for="Radio2">
+                Радио-2
+
+            </label>
+            <input class="form-check-input" type="radio" name="Radio">
+            <label class="form-check-label" for="Radios3">
+                Радио-3
+
+            </label>
+        </div>
+        <!--логин-пароль-->
+        <label for="login" class="log">Логин: </label>
+        <div class="logpas">
+            <input type="text" name="name" placeholder="Введите имя">
+            <p></p>
+        </div>
+        <label for="password" class="log">Пароль:</label>
+        <div class="logpas">
+            <input type="password" name="password" placeholder="Введите пароль">
+        </div>
+        <div class="send">
+            <p>
+                <input type="submit" class="but" value="Отправить">
+            </p>
+        </div>
+</form>
+
+</main>
+
+
+
+
