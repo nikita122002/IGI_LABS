@@ -224,6 +224,56 @@ namespace WEB_053502_KHARLAP.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("WEB_053502_KHARLAP.Entities.Car", b =>
+                {
+                    b.Property<int>("CarId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarId"), 1L, 1);
+
+                    b.Property<int>("CarGroupId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CarName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.HasKey("CarId");
+
+                    b.HasIndex("CarGroupId");
+
+                    b.ToTable("Cars");
+                });
+
+            modelBuilder.Entity("WEB_053502_KHARLAP.Entities.CarGroup", b =>
+                {
+                    b.Property<int>("CarGroupId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarGroupId"), 1L, 1);
+
+                    b.Property<string>("GroupName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CarGroupId");
+
+                    b.ToTable("CarGroups");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -273,6 +323,22 @@ namespace WEB_053502_KHARLAP.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("WEB_053502_KHARLAP.Entities.Car", b =>
+                {
+                    b.HasOne("WEB_053502_KHARLAP.Entities.CarGroup", "Group")
+                        .WithMany("Cars")
+                        .HasForeignKey("CarGroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Group");
+                });
+
+            modelBuilder.Entity("WEB_053502_KHARLAP.Entities.CarGroup", b =>
+                {
+                    b.Navigation("Cars");
                 });
 #pragma warning restore 612, 618
         }

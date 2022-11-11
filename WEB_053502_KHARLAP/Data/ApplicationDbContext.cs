@@ -10,5 +10,7 @@ namespace WEB_053502_KHARLAP.Data
             : base(options)
         {
         }
+        public DbSet<Car> Cars { get; set; }
+        public DbSet<CarGroup> CarGroups { get; set; }
     }
 }

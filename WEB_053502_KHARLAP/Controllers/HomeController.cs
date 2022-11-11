@@ -7,7 +7,7 @@ namespace WEB_053502_KHARLAP.Controllers
     {
         public IActionResult Index()
         {
-            ViewData["Text"] = "Лабораторная работа 3";
+            ViewData["Text"] = "Лабораторная работа 5";
             ViewData["Lst"] =
                 new SelectList(_listDemo, "ListItemValue", "ListItemText");
             return View();
