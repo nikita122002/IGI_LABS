@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Areas\\Admin",
+    "\\Areas\\Admin\\Pages",
+    "\\Components",
     "\\Controllers",
     "\\Data",
     "\\Views",

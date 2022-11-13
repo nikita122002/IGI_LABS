@@ -5,9 +5,7 @@
 @if (signInManager.IsSignedIn(User))
 {
 <div class="navbar-nav1">
-    <a asp-controller="Cart" asp-action="Index" class="navbar-text">
-        00,0 руб <i class="fa fa-shopping-cart nav-color"></i> (0)
-    </a>
+        @await Component.InvokeAsync("Cart")
 </div>
 <div class="menu">
     <div class="dropdown ml-4 nav-color ">

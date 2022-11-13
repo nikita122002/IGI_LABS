@@ -1,0 +1,12 @@
+D:\5сем\WEB_053502_KHARLAP.Blazor\Shared\bin\Debug\net6.0\WEB_053502_KHARLAP.Blazor.Shared.deps.json
+D:\5сем\WEB_053502_KHARLAP.Blazor\Shared\bin\Debug\net6.0\WEB_053502_KHARLAP.Blazor.Shared.dll
+D:\5сем\WEB_053502_KHARLAP.Blazor\Shared\bin\Debug\net6.0\WEB_053502_KHARLAP.Blazor.Shared.pdb
+D:\5сем\WEB_053502_KHARLAP.Blazor\Shared\obj\Debug\net6.0\WEB_053502_KHARLAP.Blazor.Shared.csproj.AssemblyReference.cache
+D:\5сем\WEB_053502_KHARLAP.Blazor\Shared\obj\Debug\net6.0\WEB_053502_KHARLAP.Blazor.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\5сем\WEB_053502_KHARLAP.Blazor\Shared\obj\Debug\net6.0\WEB_053502_KHARLAP.Blazor.Shared.AssemblyInfoInputs.cache
+D:\5сем\WEB_053502_KHARLAP.Blazor\Shared\obj\Debug\net6.0\WEB_053502_KHARLAP.Blazor.Shared.AssemblyInfo.cs
+D:\5сем\WEB_053502_KHARLAP.Blazor\Shared\obj\Debug\net6.0\WEB_053502_KHARLAP.Blazor.Shared.csproj.CoreCompileInputs.cache
+D:\5сем\WEB_053502_KHARLAP.Blazor\Shared\obj\Debug\net6.0\WEB_053502_KHARLAP.Blazor.Shared.dll
+D:\5сем\WEB_053502_KHARLAP.Blazor\Shared\obj\Debug\net6.0\refint\WEB_053502_KHARLAP.Blazor.Shared.dll
+D:\5сем\WEB_053502_KHARLAP.Blazor\Shared\obj\Debug\net6.0\WEB_053502_KHARLAP.Blazor.Shared.pdb
+D:\5сем\WEB_053502_KHARLAP.Blazor\Shared\obj\Debug\net6.0\ref\WEB_053502_KHARLAP.Blazor.Shared.dll

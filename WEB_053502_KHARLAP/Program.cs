@@ -2,9 +2,14 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WEB_053502_KHARLAP.Data;
 using WEB_053502_KHARLAP.Entities;
+using WEB_053502_KHARLAP.Models;
+using WEB_053502_KHARLAP.Services;
+using Microsoft.Extensions.DependencyInjection;
+using WEB_053502_KHARLAP.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Logging.ClearProviders();
+builder.Logging.AddFilter("Microsoft", LogLevel.None);
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -13,7 +18,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
     //.AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
+builder.Services.AddScoped<Cart>(sp => CartService.GetCart(sp));
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddDistributedMemoryCache();
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 {
     options.SignIn.RequireConfirmedAccount = false;
@@ -34,6 +41,11 @@ builder.Services.ConfigureApplicationCookie(options =>
 builder.Services.AddHealthChecks();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+builder.Services.AddSession(opt =>
+{
+    opt.Cookie.HttpOnly = true;
+    opt.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 
@@ -53,6 +65,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+
+app.UseLogging();
+app.UseSession();
 
 app.UseAuthentication();
 app.UseAuthorization();

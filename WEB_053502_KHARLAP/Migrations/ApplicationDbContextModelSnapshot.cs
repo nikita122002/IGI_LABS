@@ -254,7 +254,7 @@ namespace WEB_053502_KHARLAP.Migrations
 
                     b.HasIndex("CarGroupId");
 
-                    b.ToTable("Cars");
+                    b.ToTable("Cars", (string)null);
                 });
 
             modelBuilder.Entity("WEB_053502_KHARLAP.Entities.CarGroup", b =>
@@ -271,7 +271,7 @@ namespace WEB_053502_KHARLAP.Migrations
 
                     b.HasKey("CarGroupId");
 
-                    b.ToTable("CarGroups");
+                    b.ToTable("CarGroups", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

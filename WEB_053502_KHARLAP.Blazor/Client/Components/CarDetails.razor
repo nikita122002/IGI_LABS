@@ -1,0 +1,32 @@
+﻿@using WEB_053502_KHARLAP.Blazor.Client.Models
+@if (Car != null)
+{
+    <div class="card" style="width: 18rem;">
+        <img src=@imageSrc class="card-img-top" alt=@Car.Name>
+        <div class="card-body">
+            <h5 class="card-title">@Car.Name</h5>
+            <p class="card-text">@Car.Description</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">@Car.Price долларов</li>
+        </ul>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public DetailsViewModel Car { get; set; }
+
+    [Parameter]
+    public EventCallback<DetailsViewModel> CarChanged { get; set; }
+
+   
+
+    private string imageSrc 
+    {
+        get 
+        {
+            return $"/images/{Car.Image}";
+        }
+    }
+}

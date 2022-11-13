@@ -1,0 +1,25 @@
+﻿@using WEB_053502_KHARLAP.Blazor.Client
+@using WEB_053502_KHARLAP.Blazor.Client.Models
+
+<div class="list-group">
+    @foreach (var item in Cars)
+    {
+        <button type="button" class="list-group-item list-group-item-action" @onclick="e=>OnSelectedObjectChanged(item.CarId)">@item.CarName</button>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public IEnumerable<ListViewModel> Cars { get; set; }
+
+    [Parameter]
+    public EventCallback<IEnumerable<ListViewModel>> CarsChanged { get; set; }
+
+    [Parameter]
+    public EventCallback<int> SelectedCarChanged { get; set; }
+
+    private async Task OnSelectedObjectChanged(int id)
+    {
+        await SelectedCarChanged.InvokeAsync(id);
+    }
+}

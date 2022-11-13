@@ -1356,3 +1356,9 @@ D:\5сем\WEB_053502_KHARLAP\bin\Debug\net6.0\Microsoft.Build.dll
 D:\5сем\WEB_053502_KHARLAP\bin\Debug\net6.0\Microsoft.Build.Framework.dll
 D:\5сем\WEB_053502_KHARLAP\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
 D:\5сем\WEB_053502_KHARLAP\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\5сем\WEB_053502_KHARLAP\bin\Debug\net6.0\Serilog.Extensions.Logging.File.dll
+D:\5сем\WEB_053502_KHARLAP\bin\Debug\net6.0\Serilog.dll
+D:\5сем\WEB_053502_KHARLAP\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+D:\5сем\WEB_053502_KHARLAP\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+D:\5сем\WEB_053502_KHARLAP\bin\Debug\net6.0\Serilog.Sinks.Async.dll
+D:\5сем\WEB_053502_KHARLAP\bin\Debug\net6.0\Serilog.Sinks.File.dll

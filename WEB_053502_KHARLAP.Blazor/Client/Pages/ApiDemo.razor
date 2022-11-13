@@ -1,0 +1,46 @@
+﻿@page "/apidemo"
+@using System.Text.Json
+@using WEB_053502_KHARLAP.Blazor.Client.Components
+@using WEB_053502_KHARLAP.Blazor.Client.Models
+@inject HttpClient client
+
+<h3>ApiDemo</h3>
+
+<div class="container"> 
+    @if (Cars != null)
+    {
+        <CarsList @bind-Cars="Cars" SelectedCarChanged="ShowDetails"></CarsList>
+        <CarDetails @bind-Car="SelectedCar"></CarDetails>
+    }
+    else 
+    {
+        <p>Loading data...</p>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public DetailsViewModel SelectedCar { get; set; }
+
+    [Parameter]
+    public IEnumerable<ListViewModel> Cars { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        string apiBaseAddress = "/api/cars";
+        var response = await client.GetAsync(apiBaseAddress);
+        if (response != null)
+        {
+            using var responseStream = await response.Content.ReadAsStreamAsync();
+            Cars = await JsonSerializer
+                .DeserializeAsync<IEnumerable<ListViewModel>>(responseStream,
+                        new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+        }
+    }
+
+    private async Task ShowDetails(int id)
+    {
+        string apiBaseAddress = $"/api/cars/{id}";
+        SelectedCar = await client.GetFromJsonAsync<DetailsViewModel>(apiBaseAddress);
+    }
+}

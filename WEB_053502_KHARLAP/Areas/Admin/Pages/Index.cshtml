@@ -1,0 +1,71 @@
+﻿@page
+@model WEB_053502_KHARLAP.Areas.Admin.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p class="mt-2">
+    <a asp-page="Create" class="btn btn-outline-info">
+        <span class="fa fa-plus-circle">Create New</span>
+    </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].CarName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Group)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Car)
+        {
+            <tr>
+                <td>
+                    <img src="~/images/@item.Image" alt="NoImage" width="50" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Image)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Group.CarGroupId)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.CarId"
+                   class="btn btn-outline-info">
+                        <span class="fa fa-pencil-square-o"></span>
+                    </a>
+                    <a asp-page="./Delete" asp-route-id="@item.CarId"
+                   class="btn btn-outline-danger">
+                        <span class="fa fa-trash-o"></span>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
